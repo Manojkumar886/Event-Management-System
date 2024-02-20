@@ -1,9 +1,10 @@
 package EMS.Event.Management.System;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 //http://localhost:8080
@@ -20,6 +21,16 @@ public class eventController
                 "successfully";
     }
 
+    @GetMapping("/list")
+    public List<eventEntity> viewdata()
+    {
+        return service.showall();
+    }
 
+    @GetMapping("/readonly/{number}")
+    public Optional<eventEntity> readingone(@PathVariable("number") int number)
+    {
+        return  service.readone(number);
+    }
 
 }
