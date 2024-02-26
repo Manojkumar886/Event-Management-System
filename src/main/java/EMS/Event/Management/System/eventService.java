@@ -32,4 +32,19 @@ public class eventService
     {
         return  repo.findById(myeventnumber);
     }
+
+    public String deleteone(int eventnumber)
+    {
+       eventEntity temp=repo.findById(eventnumber).orElse(new eventEntity());
+       repo.delete(temp);
+        return  temp.getEventName()+" has been deleted";
+    }
+
+    public void deleteusingid(int id)
+    {
+        repo.deleteById(id);
+    }
+
+//    find any one eventname
+
 }

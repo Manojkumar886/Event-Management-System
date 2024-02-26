@@ -33,4 +33,27 @@ public class eventController
         return  service.readone(number);
     }
 
+    @PutMapping("/update")
+    public String updating(@RequestBody eventEntity eventdetails)
+    {
+        eventEntity temp=service.makecreate(eventdetails);
+
+        return  temp.getEventName()+" event has been updated...!";
+    }
+
+    @DeleteMapping("/delete/{eventnumber}")
+    public void deleting(@PathVariable("eventnumber")int eventnumber)
+    {
+        service.deleteone(eventnumber);
+    }
+
+    @DeleteMapping("/deleteid/{id}")
+    public void delete(@PathVariable("id")int id)
+    {
+        service.deleteusingid(id);
+    }
+
+
+
+
 }
