@@ -46,5 +46,19 @@ public class eventService
     }
 
 //    find any one eventname
+    public List<eventEntity> findsameeventname(String eventname)
+    {
+       return repo.findByEventName(eventname);
+    }
 
+    public List<eventEntity> findbybetweenvalues(int startingvalue,int endingvalue)
+    {
+        return  repo.findAllByEventEntryprice(startingvalue,endingvalue);
+    }
+
+    public void update(int price)
+    {
+        repo.updateprice(price);
+    }
 }
+

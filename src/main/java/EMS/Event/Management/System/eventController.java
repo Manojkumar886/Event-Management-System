@@ -53,7 +53,22 @@ public class eventController
         service.deleteusingid(id);
     }
 
+    @GetMapping("/findevent/{eventname}")
+    public List<eventEntity> findsameevent(@PathVariable("eventname")String eventname)
+    {
+        return service.findsameeventname(eventname);
+    }
 
+    @GetMapping("/twoprices/{startingvalue}/{endingvalue}")
+    public List<eventEntity> findtwotypeofprices(@PathVariable("startingvalue")int startingvalue,@PathVariable("endingvalue")int endingvalue)
+    {
+        return  service.findbybetweenvalues(startingvalue, endingvalue);
+    }
 
+    @PutMapping("/updateentryprice/{price}")
+    public void updateprice(@PathVariable("price")int price)
+    {
+        service.update(price);
+    }
 
 }
