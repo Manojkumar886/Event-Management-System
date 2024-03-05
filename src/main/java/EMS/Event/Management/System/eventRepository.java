@@ -19,9 +19,9 @@ public interface eventRepository extends JpaRepository<eventEntity,Integer>
             "where event_entryprice between :startingprice and :endingprice ",nativeQuery = true)
     public List<eventEntity> findAllByEventEntryprice(int startingprice,int endingprice);
 
-    @Modifying
-    @Transactional
-    @Query(" update event_entity e set e.event_entryprice=e.event_entryprice+200 where e.event_entryprice>=:price")
-    public void updateprice(int price);
+//    @Modifying
+//    @Transactional
+//    @Query(" update event_entity e set e.event_entryprice=e.event_entryprice+200 where e.event_entryprice>=:price")
+//    public List<eventEntity> updateEntryprice(int price);
 
 }

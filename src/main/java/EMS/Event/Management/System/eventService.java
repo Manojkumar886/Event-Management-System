@@ -56,9 +56,9 @@ public class eventService
         return  repo.findAllByEventEntryprice(startingvalue,endingvalue);
     }
 
-    public void update(int price)
-    {
-        repo.updateprice(price);
-    }
+//    public void update(int price)
+//    {
+//        repo.updateEntryprice(price);
+//    }
 }
 

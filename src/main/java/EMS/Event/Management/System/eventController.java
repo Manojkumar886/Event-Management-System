@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//http://localhost:8080
+@RequestMapping("/eventmanagement")
+//http://localhost:8080/eventmanagement
 public class eventController
 {
     @Autowired
     eventService service;
 
-//    http://localhost:8080/create
+//    http://localhost:8080/eventmanagement/create
     @PostMapping("/create")
     public String createmethod(@RequestBody eventEntity myevent)
     {
@@ -65,10 +66,10 @@ public class eventController
         return  service.findbybetweenvalues(startingvalue, endingvalue);
     }
 
-    @PutMapping("/updateentryprice/{price}")
-    public void updateprice(@PathVariable("price")int price)
-    {
-        service.update(price);
-    }
+//    @PutMapping("/updateentryprice/{price}")
+//    public void updateprice(@PathVariable("price")int price)
+//    {
+//        service.update(price);
+//    }
 
 }
