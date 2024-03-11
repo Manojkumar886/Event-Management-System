@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/eventmanagement")
 //http://localhost:8080/eventmanagement
 public class eventController
@@ -72,4 +73,9 @@ public class eventController
 //        service.update(price);
 //    }
 
+    @GetMapping("/")
+    public void sample()
+    {
+        System.out.println("get username and password");
+    }
 }

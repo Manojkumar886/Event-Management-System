@@ -46,9 +46,9 @@ public class My_Authentication {
 //        hps.authorizeHttpRequests()
 //                        .anyRequest()
 //                                .authenticated();
-        hps.authorizeRequests()
-                .requestMatchers("/eventmanagement")
-                .authenticated();
+       hps.authorizeHttpRequests()
+               .requestMatchers("/eventmanagement/*")
+                       .authenticated();
 
         hps.cors();
         hps.csrf().disable();//cross site request forgery -a web attack exploits loopholes
