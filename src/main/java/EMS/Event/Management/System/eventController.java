@@ -23,7 +23,7 @@ public class eventController
                 "successfully";
     }
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public List<eventEntity> viewdata()
     {
         return service.showall();
@@ -72,10 +72,4 @@ public class eventController
 //    {
 //        service.update(price);
 //    }
-
-    @GetMapping("/")
-    public void sample()
-    {
-        System.out.println("get username and password");
-    }
 }

@@ -28,7 +28,7 @@ public class My_Authentication {
                 .password(mycoder().encode("Janani@123"))
                 .roles("Manager")
                 .build();
-        UserDetails user2 = User.withUsername("Tamil")
+        UserDetails user2 = User.withUsername("Tamil123")
                 .password(mycoder().encode("Tamil@123"))
                 .roles("Admin")
                 .build();
@@ -46,8 +46,8 @@ public class My_Authentication {
 //        hps.authorizeHttpRequests()
 //                        .anyRequest()
 //                                .authenticated();
-       hps.authorizeHttpRequests()
-               .requestMatchers("/eventmanagement/*")
+       hps.authorizeRequests()
+               .requestMatchers("/eventmanagement/**")
                        .authenticated();
 
         hps.cors();
