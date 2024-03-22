@@ -16,8 +16,7 @@ import java.sql.Date;
 @AllArgsConstructor  //with parameter
 public class eventEntity
 {
-    @Id //primary key
-    @GeneratedValue(strategy = GenerationType.AUTO) //auto_increment
+    @Id //primary key//auto_increment
     private int eventNumber;
     private String eventName;
     private String eventLocation;
